@@ -37,13 +37,34 @@ Bộ dữ liệu sử dụng trong demo là dataset.csv, gồm 500 mẫu mô ph�
 + Số chiều vector Markov: 8 × 8 = 64
 
 ## Quy trình thực nghiệm
-Bước 1. Đọc dataset chứa chuỗi API family.
-Bước 2. Tách mỗi chuỗi thành các trạng thái API family.
-Bước 3. Xác định các cặp chuyển trạng thái liên tiếp.
-Bước 4. Tính xác suất chuyển trạng thái giữa các API family.
-Bước 5. Xây dựng ma trận Markov cho từng mẫu.
+## Quy trình thực nghiệm
+
+Chương trình mô phỏng pipeline cốt lõi của MAMADROID ở dạng rút gọn. Thay vì phân tích trực tiếp các tệp APK thật bằng Soot và FlowDroid, demo sử dụng sẵn chuỗi API family trong file `dataset_harder.csv` để minh họa quá trình xây dựng Markov Chain và phân loại benign/malware.
+
+Quy trình thực nghiệm gồm các bước sau:
+
+```text
+Bước 1. Đọc bộ dữ liệu mô phỏng từ file dataset_harder.csv.
+
+Bước 2. Với mỗi mẫu ứng dụng, lấy chuỗi API family đã được biểu diễn sẵn.
+Ví dụ: android → java → google → self-defined → obfuscated.
+
+Bước 3. Tách chuỗi API family thành các trạng thái riêng lẻ.
+
+Bước 4. Xác định các cặp chuyển trạng thái liên tiếp trong chuỗi.
+Ví dụ: android → java, java → google, google → self-defined.
+
+Bước 5. Tính xác suất chuyển trạng thái giữa các API family để xây dựng ma trận Markov.
+
 Bước 6. Chuyển ma trận Markov thành vector đặc trưng.
-Bước 7. Huấn luyện và đánh giá các mô hình học máy.
+Trong demo này có 8 trạng thái API family, do đó mỗi vector có 8 × 8 = 64 chiều.
+
+Bước 7. Đưa vector đặc trưng vào các mô hình học máy gồm Random Forest, 1-NN, 3-NN và SVM.
+
+Bước 8. Đánh giá kết quả phân loại benign/malware bằng các chỉ số Precision, Recall và F1-score.
+```
+
+Tóm lại, mỗi ứng dụng trong demo được biểu diễn bằng một chuỗi API family. Từ chuỗi này, chương trình tính toán xác suất chuyển từ một API family sang API family kế tiếp, sau đó xây dựng ma trận Markov. Ma trận này được chuyển thành vector đặc trưng và đưa vào các mô hình học máy để phân loại ứng dụng là benign hoặc malware.
 
 ## Mô hình sử dụng
 Các mô hình học máy được sử dụng trong thực nghiệm gồm:
