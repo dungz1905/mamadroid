@@ -8,3 +8,6 @@ Repo này được xây dựng phục vụ mục đích học tập và minh h�
 
 ```text
 API family sequence → Markov Chain → Feature vector → Machine Learning classifier
+
+## Cấu trúc thư mục
+
