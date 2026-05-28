@@ -37,7 +37,6 @@ Bộ dữ liệu sử dụng trong demo là dataset.csv, gồm 500 mẫu mô ph�
 + Số chiều vector Markov: 8 × 8 = 64
 
 ## Quy trình thực nghiệm
-## Quy trình thực nghiệm
 
 Chương trình mô phỏng pipeline cốt lõi của MAMADROID ở dạng rút gọn. Thay vì phân tích trực tiếp các tệp APK thật bằng Soot và FlowDroid, demo sử dụng sẵn chuỗi API family trong file `dataset_harder.csv` để minh họa quá trình xây dựng Markov Chain và phân loại benign/malware.
 
