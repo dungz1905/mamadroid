@@ -24,7 +24,7 @@ HƯỚNG DẪN CHẠY DEMO MAMADROID
    benign/malware.
 
 5. Dataset:
-   File dataset_harder.csv gồm 500 mẫu mô phỏng, trong đó mỗi mẫu có:
+   File dataset.csv gồm 500 mẫu mô phỏng, trong đó mỗi mẫu có:
    - app_id
    - sequence: chuỗi API family
    - label: 0 là benign, 1 là malware
