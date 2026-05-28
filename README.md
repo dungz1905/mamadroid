@@ -38,12 +38,12 @@ Bộ dữ liệu sử dụng trong demo là dataset.csv, gồm 500 mẫu mô ph�
 
 ## Quy trình thực nghiệm
 
-Chương trình mô phỏng pipeline cốt lõi của MAMADROID ở dạng rút gọn. Thay vì phân tích trực tiếp các tệp APK thật bằng Soot và FlowDroid, demo sử dụng sẵn chuỗi API family trong file `dataset_harder.csv` để minh họa quá trình xây dựng Markov Chain và phân loại benign/malware.
+Chương trình mô phỏng pipeline cốt lõi của MAMADROID ở dạng rút gọn. Thay vì phân tích trực tiếp các tệp APK thật bằng Soot và FlowDroid, demo sử dụng sẵn chuỗi API family trong file `dataset.csv` để minh họa quá trình xây dựng Markov Chain và phân loại benign/malware.
 
 Quy trình thực nghiệm gồm các bước sau:
 
 ```text
-Bước 1. Đọc bộ dữ liệu mô phỏng từ file dataset_harder.csv.
+Bước 1. Đọc bộ dữ liệu mô phỏng từ file dataset.csv.
 
 Bước 2. Với mỗi mẫu ứng dụng, lấy chuỗi API family đã được biểu diễn sẵn.
 Ví dụ: android → java → google → self-defined → obfuscated.
@@ -95,7 +95,7 @@ Sau khi cài đặt xong, chạy chương trình bằng lệnh:
 python mamadroid_experiment.py
 ```
 
-Chương trình sẽ tự động đọc dữ liệu từ file `dataset_harder.csv`, xây dựng vector đặc trưng Markov và đánh giá các mô hình học máy.
+Chương trình sẽ tự động đọc dữ liệu từ file `dataset.csv`, xây dựng vector đặc trưng Markov và đánh giá các mô hình học máy.
 
 ### Cách 2. Chạy nhanh trên Windows
 
