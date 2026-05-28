@@ -19,6 +19,7 @@ mamadroid/
 ├── dataset.csv
 ├── requirements.txt
 └── run.bat
+```
 
 Trong đó:
 + README.md: mô tả mục đích, quy trình thực nghiệm, cách chạy chương trình và kết quả chính.
